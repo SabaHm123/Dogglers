@@ -17,7 +17,7 @@ class HorizontalListActivity : AppCompatActivity() {
 
         binding.horizontalRecyclerView.adapter = DogCardAdapter(
             applicationContext,
-            Layout.HORIZONTAL
+            Layout.HORIZONTAL,
         )
 
         // Specify fixed size to improve performance

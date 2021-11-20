@@ -17,7 +17,7 @@ class GridListActivity : AppCompatActivity() {
 
         binding.gridRecyclerView.adapter = DogCardAdapter(
             applicationContext,
-            Layout.GRID
+            Layout.GRID,
         )
 
         // Specify fixed size to improve performance

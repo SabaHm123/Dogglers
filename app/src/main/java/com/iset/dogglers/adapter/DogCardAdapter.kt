@@ -1,6 +1,7 @@
 package com.iset.dogglers.adapter
 
 import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -12,9 +13,20 @@ import androidx.recyclerview.widget.RecyclerView
 class DogCardAdapter(
     private val context: Context?,
     private val layout: Int,
-) : RecyclerView.Adapter<DogCardAdapter.DogCardViewHolder>() {
+    private lateinit var adapter: RecyclerView
 
-    // TODO: Initialize the data using the List found in data/DataSource
+
+
+) : RecyclerView.Adapter<DogCardAdapter.DogCardViewHolder>() {
+    private val dogs: ArrayList<dogs>
+
+
+    class DogCardAdapter(private val context: Context,
+                        private val dataSource: ArrayList<dogs>) : DogCardAdapter() {
+        private val inflater: LayoutInflater
+                = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+
+    }
 
     /**
      * Initialize view elements
@@ -29,16 +41,20 @@ class DogCardAdapter(
         //  the vertical/horizontal list item should be used.
 
         // TODO Inflate the layout
-
+        val inflatedView = parent.inflate(R.layout.recyclerview_item_row, false)
+        return dogHolder(inflatedView)
         // TODO: Null should not be passed into the view holder. This should be updated to reflect
         //  the inflated layout.
         return DogCardViewHolder(null)
     }
 
-    override fun getItemCount(): Int = 0 // TODO: return the size of the data set instead of 0
+    override fun getItemCount(): Int = 0
+    return dataSource.size
 
     override fun onBindViewHolder(holder: DogCardViewHolder, position: Int) {
-        // TODO: Get the data at the current position
+        val itemPhoto = dataSource[position]
+        holder.bindDog(itemdog)
+        return dataSource[position]
         // TODO: Set the image resource for the current dog
         // TODO: Set the text for the current dog's name
         // TODO: Set the text for the current dog's age
@@ -49,3 +65,8 @@ class DogCardAdapter(
         //  resources?.getString(R.string.dog_hobbies, dog.hobbies)
     }
 }
+
+
+
+
+

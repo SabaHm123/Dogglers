@@ -17,7 +17,7 @@ class VerticalListActivity : AppCompatActivity() {
 
         binding.verticalRecyclerView.adapter = DogCardAdapter(
             applicationContext,
-            Layout.VERTICAL
+            Layout.VERTICAL,
         )
 
         // Specify fixed size to improve performance
