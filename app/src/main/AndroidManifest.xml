@@ -11,28 +11,28 @@
         android:theme="@style/Theme.Dogglers"
         android:fullBackupContent="@xml/backup_descriptor">
         <activity
-            android:name=".VerticalListActivity"
+            android:name="com.sabahmidi.dogglers.VerticalListActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.sabahmidi.dogglers.MainActivity" />
         </activity>
         <activity
-            android:name=".HorizontalListActivity"
+            android:name="com.sabahmidi.dogglers.HorizontalListActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.sabahmidi.dogglers.MainActivity" />
         </activity>
         <activity
-            android:name=".GridListActivity"
+            android:name="com.sabahmidi.dogglers.GridListActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.sabahmidi.dogglers.MainActivity" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.sabahmidi.dogglers.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

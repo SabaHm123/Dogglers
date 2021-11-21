@@ -1,9 +1,9 @@
-package com.iset.dogglers
+package com.sabahmidi.dogglers
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.iset.dogglers.adapter.DogCardAdapter
-import com.iset.dogglers.const.Layout
+import com.sabahmidi.dogglers.const.Layout
 import com.iset.dogglers.databinding.ActivityGridListBinding
 
 class GridListActivity : AppCompatActivity() {
@@ -19,6 +19,7 @@ class GridListActivity : AppCompatActivity() {
             applicationContext,
             Layout.GRID,
         )
+
 
         // Specify fixed size to improve performance
         binding.gridRecyclerView.setHasFixedSize(true)

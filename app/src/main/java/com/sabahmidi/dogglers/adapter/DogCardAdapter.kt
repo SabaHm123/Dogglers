@@ -1,11 +1,14 @@
-package com.iset.dogglers.adapter
-
+package com.sabahmidi.dogglers.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-
+import com.sabahmidi.dogglers.R
+import com.sabahmidi.dogglers.const.Layout
+import com.sabahmidi.dogglers.data.DataSource
 /**
  * Adapter to inflate the appropriate list item layout and populate the view with information
  * from the appropriate data source
@@ -13,12 +16,12 @@ import androidx.recyclerview.widget.RecyclerView
 class DogCardAdapter(
     private val context: Context?,
     private val layout: Int,
-    private lateinit var adapter: RecyclerView
+
 
 
 
 ) : RecyclerView.Adapter<DogCardAdapter.DogCardViewHolder>() {
-    private val dogs: ArrayList<dogs>
+    val dataset = DataSource.dogs
 
 
     class DogCardAdapter(private val context: Context,
@@ -32,7 +35,10 @@ class DogCardAdapter(
      * Initialize view elements
      */
     class DogCardViewHolder(view: View?) : RecyclerView.ViewHolder(view!!) {
-        // TODO: Declare and initialize all of the list item UI components
+        val imageView: ImageView = view!!.findViewById(R.id.ImageView)
+        val textName: TextView = view!!.findViewById(R.id.textName)
+        val textAge: TextView = view!!.findViewById(R.id.textAge)
+        val textHobbies: TextView = view!!.findViewById(R.id.textHobbies)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DogCardViewHolder {
@@ -49,14 +55,15 @@ class DogCardAdapter(
     }
 
     override fun getItemCount(): Int = 0
-    return dataSource.size
+    val item = dataset[size]
 
     override fun onBindViewHolder(holder: DogCardViewHolder, position: Int) {
-        val itemPhoto = dataSource[position]
-        holder.bindDog(itemdog)
-        return dataSource[position]
+        val item = dataset[position]
         // TODO: Set the image resource for the current dog
+        holder.imageView.setImageResource(item.imageResourceId)
+
         // TODO: Set the text for the current dog's name
+        holder.textName.text = item.name
         // TODO: Set the text for the current dog's age
         val resources = context?.resources
         // TODO: Set the text for the current dog's hobbies by passing the hobbies to the

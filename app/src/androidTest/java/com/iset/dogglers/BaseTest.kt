@@ -18,7 +18,7 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import com.iset.dogglers.BaseTest.DrawableMatcher.withDrawable
-import com.iset.dogglers.data.DataSource
+import com.sabahmidi.dogglers.data.DataSource
 import org.hamcrest.CoreMatchers
 import org.hamcrest.Description
 import org.hamcrest.Matcher
